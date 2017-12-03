@@ -61,6 +61,7 @@ section.searchBox div input{
     font-size: .26rem;
     border: 2px solid #f1f1f3;
     border-radius: 5px;
+    -webkit-appearance: none;
 }
 section.searchBox div a{
     position: absolute;
@@ -146,12 +147,12 @@ section.searchResult ul:nth-child(2) li{
 .mask{
     position: absolute;
     top: 0px;
-    filter: alpha(opacity=40);
+    filter: alpha(opacity=60);
     background-color: #000;
     z-index: 100;
     left: 0px;
-    opacity: 0.4;
-    -moz-opacity: 0.4;
+    opacity: 0.6;
+    -moz-opacity: 0.6;
 }
 #communityList{
     display: none;
