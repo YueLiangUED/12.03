@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="wrap">
+    <header>
+        <span>北京</span><!--
+        --><span id="urban">请选择所在区县</span>
+        <span class="triangle"></span>
+    </header>
+    <section class="urban">
+        <ul id="urbanList" class="clear">
+            <li>东城区</li>
+            <li>西城区</li>
+            <li>朝阳区</li>
+            <li>海淀区</li>
+            <li>丰台区</li>
+            <li>大兴区</li>
+            <li>怀柔区</li>
+            <li>昌平区</li>
+            <li>顺义区</li>
+            <li>通州区</li>
+            <li>石景山区</li>
+            <li>房山区</li>
+            <li>平谷区</li>
+            <li>密云县</li>
+            <li>延庆县</li>
+            <li>门头沟区</li>
+        </ul>
+    </section>
+    <section class="searchBox">
+        <p>请输入小区名称或地址</p>
+        <div>
+            <input type="text">
+            <a id="searchBtn" href="javascript:void(0)">搜索</a>
+        </div>
+    </section>
+    <section class="searchResult">
+        <ul id="communityList">
+            <li>美惠大厦-A</li>
+            <li>美惠大厦-B</li>
+        </ul>
+        <ul id="floorNumList" class="clear">
+            <li>1号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+            <li>2号楼</li>
+        </ul>
+    </section>
+</section>
+<!--遮罩层-->
+<div class="mask" id="mask"></div>
+<!--弹窗-->
+<div class="tcWrap">
+    <p>您好：</p>
+    <p>您选择的<span></span>已有移动宽带覆盖，请选择具体的宽带产品进行报装：</p>
+    <ul class="clear">
+        <li>
+            <a href="">30M</a>
+        </li>
+        <li>
+            <a href="">50M</a>
+        </li>
+        <li>
+            <a href="">100M</a>
+        </li>
+        <li>
+            <a id="default" href="javascript:void(0)">暂不报装</a>
+        </li>
+    </ul>
+    <p>注：由于部分小区未实现全部覆盖，请您在报装过程中注意查看和选择楼宇，提交报装需求后将有工作人员与您核实确认能否安装。谢谢您的理解和支持！</p>
+</div>
+</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/index.js"></script>
