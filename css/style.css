@@ -101,6 +101,10 @@ section.searchResult ul:nth-child(2) li{
     border: 2px solid #eeeeee;
     border-radius: .5rem;
 }
+section.searchResult ul:nth-child(2) li.active{
+    color: #0085ce;
+    border-color: #0085ce;
+}
 .tcWrap{
     display: none;
     position: fixed;

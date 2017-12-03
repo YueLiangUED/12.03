@@ -35,11 +35,13 @@ $(function () {
     //点击楼号弹出业务办理弹窗
     $('#floorNumList').on('click','li',function () {
         $('.tcWrap').slideDown();
+        $(this).addClass('active').siblings('li').removeClass('active');
         $('#selected').text($('#communityList li.act').text() + " " + $(this).text());
         showMask();
     });
     //点击暂不报装按钮
     $('#default').on('click',function () {
+        $('#floorNumList li').removeClass('active');
         $('.tcWrap').slideUp();
         hideMask();
     });
