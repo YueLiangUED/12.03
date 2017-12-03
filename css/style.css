@@ -133,9 +133,9 @@ section.searchResult ul:nth-child(2) li.active{
     width: 1.5rem;
     height: .52rem;
     text-align: center;
-    line-height: .48rem;
+    line-height: .5rem;
     border-radius: 5px;
-    border: 2px solid #eeeeee;
+    border: 1px solid #eeeeee;
 }
 .tcWrap ul li:last-child{
     margin-right: 0;
