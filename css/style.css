@@ -55,23 +55,23 @@ section.searchBox div{
 section.searchBox div input{
     box-sizing: border-box;
     margin-bottom: .35rem;
-    padding: 0 .1rem 0;
+    padding: 0 1.6rem 0 .1rem;
     width: 6.8rem;
     height: .65rem;
     font-size: .26rem;
-    border: 2px solid #f1f1f3;
+    border: 1px solid #f1f1f3;
     border-radius: 5px;
     -webkit-appearance: none;
 }
 section.searchBox div a{
     position: absolute;
-    right: 2px;
-    top: 2px;
+    right: 1px;
+    top: 1px;
     width: 1.58rem;
-    height: .61rem;
+    height: .63rem;
     font-size: .28rem;
     text-align: center;
-    line-height: .61rem;
+    line-height: .63rem;
     color: #222222;
     border-radius: 0 5px 5px 0;
     background-color: #eeeeee;
@@ -97,8 +97,8 @@ section.searchResult ul:nth-child(2) li{
     height: .5rem;
     font-size: .26rem;
     text-align: center;
-    line-height: .45rem;
-    border: 2px solid #eeeeee;
+    line-height: .48rem;
+    border: 1px solid #eeeeee;
     border-radius: .5rem;
 }
 section.searchResult ul:nth-child(2) li.active{
