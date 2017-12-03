@@ -11,25 +11,31 @@ $(function () {
     $('#urbanList').on('click','li',function () {
         var $this = $(this),
             $urban = $('#urban');
+        $this.addClass('active');
         $urban.text($this.text());
         $('#urbanList').slideUp();
     });
     //显示城区列表
     $('.triangle').on('click',function () {
         $('#urbanList').slideToggle();
+        $('#urbanList').find('li').removeClass('active');
     });
     //搜索按钮
     $('#searchBtn').on('click',function () {
         $('#communityList').slideDown();
+        $('#communityList li').slideDown();
+        $('#floorNumList').slideUp();
     });
     //点击小区名称展示楼号
     $('#communityList').on('click','li',function () {
         $(this).siblings('li').slideUp();
+        $(this).addClass('act');
         $('#floorNumList').slideDown();
     });
     //点击楼号弹出业务办理弹窗
     $('#floorNumList').on('click','li',function () {
         $('.tcWrap').slideDown();
+        $('#selected').text($('#communityList li.act').text() + " " + $(this).text());
         showMask();
     });
     //点击暂不报装按钮
