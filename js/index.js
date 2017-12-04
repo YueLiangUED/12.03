@@ -20,6 +20,34 @@ $(function () {
         $('#urbanList').slideToggle();
         $('#urbanList').find('li').removeClass('active');
     });
+    //搜索下拉
+    $('#searchBox').on('input',function () {
+        var $resultList = $('#resultList'),
+            $this = $(this);
+        $resultList.slideDown();
+        $('#resultList').find('li').removeClass('active');
+        if($this.val() == ''){
+            $resultList.slideUp();
+        }
+    });
+    //搜索下拉列表点击事件
+    //获取焦点
+    $('input').focus(function () {
+        $('#resultList').slideDown();
+        $('#resultList').find('li').removeClass('active');
+    });
+    //失去焦点
+    $('input').blur(function () {
+        $('#resultList').slideUp();
+    });
+    $('#resultList').on('click','li',function () {
+        $(this).addClass('active');
+        $('#searchBox').val($(this).text());
+        $('#resultList').slideUp();
+        $('#communityList').slideDown();
+        $('#communityList li').slideDown();
+        $('#floorNumList').slideUp();
+    });
     //搜索按钮
     $('#searchBtn').on('click',function () {
         $('#communityList').slideDown();

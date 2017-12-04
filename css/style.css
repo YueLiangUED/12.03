@@ -76,6 +76,30 @@ section.searchBox div a{
     border-radius: 0 5px 5px 0;
     background-color: #eeeeee;
 }
+section.searchBox div ul{
+    display: none;
+    position: absolute;
+    top: .75rem;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #ffffff;
+    z-index: 10;
+}
+section.searchBox div ul li{
+    box-sizing: border-box;
+    padding: 0 .5rem;
+    width: 6.8rem;
+    height: .6rem;
+    font-size: .26rem;
+    line-height: .6rem;
+    border-bottom: 1px solid #eeeeee;
+}
+section.searchBox div ul li:last-child{
+    border-bottom: none;
+}
+section.searchBox div ul li.active{
+    background-color: #eee;
+}
 section.searchResult ul:nth-child(1) li{
     box-sizing: border-box;
     height: .85rem;
