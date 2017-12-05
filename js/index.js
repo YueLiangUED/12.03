@@ -7,6 +7,8 @@
 })(window);
 
 $(function () {
+    
+    
     //选择城区
     $('#urbanList').on('click','li',function () {
         var $this = $(this),
@@ -20,7 +22,7 @@ $(function () {
         $('#urbanList').slideToggle();
         $('#urbanList').find('li').removeClass('active');
     });
-    //搜索下拉
+    /*//搜索下拉
     $('#searchBox').on('input',function () {
         var $resultList = $('#resultList'),
             $this = $(this);
@@ -47,7 +49,7 @@ $(function () {
         $('#communityList').slideDown();
         $('#communityList li').slideDown();
         $('#floorNumList').slideUp();
-    });
+    });*/
     //搜索按钮
     $('#searchBtn').on('click',function () {
         $('#communityList').slideDown();
