@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ed8d09b-f93c-4345-aed2-d97dfe859ce8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-ui.js" afterPath="$PROJECT_DIR$/js/jquery-ui.js" />
     </list>
     <ignored path="12.01宽带覆盖查询.iws" />
@@ -34,19 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-ui.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jquery-ui.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="8243" column="22" selection-start-line="8243" selection-start-column="22" selection-end-line="8243" selection-end-column="22" />
+            <state relative-caret-position="980">
+              <caret line="7414" column="0" selection-start-line="7414" selection-start-column="0" selection-end-line="7414" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1512637325000" expanded="true" signature="22659:22730" placeholder="..." />
-                <marker date="1512637325000" expanded="true" signature="22753:22777" placeholder="..." />
-                <marker date="1512637325000" expanded="true" signature="105400:105417" placeholder="..." />
-                <marker date="1512637325000" expanded="true" signature="120032:120048" placeholder="..." />
-                <marker date="1512637325000" expanded="true" signature="277554:277598" placeholder="..." />
-                <marker date="1512637325000" expanded="true" signature="327127:327476" placeholder="..." />
+                <marker date="1512638123000" expanded="true" signature="22659:22730" placeholder="..." />
+                <marker date="1512638123000" expanded="true" signature="22753:22777" placeholder="..." />
+                <marker date="1512638123000" expanded="true" signature="105400:105417" placeholder="..." />
+                <marker date="1512638123000" expanded="true" signature="120032:120048" placeholder="..." />
+                <marker date="1512638123000" expanded="true" signature="277550:277594" placeholder="..." />
+                <marker date="1512638123000" expanded="true" signature="327123:327472" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="470">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -97,8 +97,8 @@
         <option value="$USER_HOME$/Downloads/data(2).txt" />
         <option value="$USER_HOME$/Downloads/data(3).txt" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/jquery-ui.js" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -288,12 +288,12 @@
       <workItem from="1512477789516" duration="12871000" />
       <workItem from="1512538518919" duration="155000" />
       <workItem from="1512619247165" duration="2747000" />
-      <workItem from="1512635505762" duration="1699000" />
+      <workItem from="1512635505762" duration="2453000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39099000" />
+    <option name="totallyTimeSpent" value="39853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1237" height="777" extended-state="6" />
@@ -642,14 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -660,17 +652,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="8243" column="22" selection-start-line="8243" selection-start-column="22" selection-end-line="8243" selection-end-column="22" />
+        <state relative-caret-position="980">
+          <caret line="7414" column="0" selection-start-line="7414" selection-start-column="0" selection-end-line="7414" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1512637325000" expanded="true" signature="22659:22730" placeholder="..." />
-            <marker date="1512637325000" expanded="true" signature="22753:22777" placeholder="..." />
-            <marker date="1512637325000" expanded="true" signature="105400:105417" placeholder="..." />
-            <marker date="1512637325000" expanded="true" signature="120032:120048" placeholder="..." />
-            <marker date="1512637325000" expanded="true" signature="277554:277598" placeholder="..." />
-            <marker date="1512637325000" expanded="true" signature="327127:327476" placeholder="..." />
+            <marker date="1512638123000" expanded="true" signature="22659:22730" placeholder="..." />
+            <marker date="1512638123000" expanded="true" signature="22753:22777" placeholder="..." />
+            <marker date="1512638123000" expanded="true" signature="105400:105417" placeholder="..." />
+            <marker date="1512638123000" expanded="true" signature="120032:120048" placeholder="..." />
+            <marker date="1512638123000" expanded="true" signature="277550:277594" placeholder="..." />
+            <marker date="1512638123000" expanded="true" signature="327123:327472" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

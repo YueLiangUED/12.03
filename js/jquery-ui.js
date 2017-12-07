@@ -8239,9 +8239,9 @@ $.widget( "ui.autocomplete", {
 				if ( false !== this._trigger( "focus", event, { item: item } ) ) {
 
 					// use value to match what will end up in the input, if it was a key event
-					//if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
+					if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
 						this._value( item.kk );
-					//}
+					}
 				}
 
 				// Announce the value in the liveRegion
