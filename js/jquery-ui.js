@@ -8195,7 +8195,7 @@ $.widget( "ui.autocomplete", {
 
 		this._addClass( this.menu.element, "ui-autocomplete", "ui-front" );
 		this._on( this.menu.element, {
-			click: function( event ) {
+			mousedown: function( event ) {
 
 				// prevent moving focus out of the text field
 				event.preventDefault();
@@ -8212,9 +8212,9 @@ $.widget( "ui.autocomplete", {
 					// and ignored the blur event because of the cancelBlur flag set above. So
 					// we restore focus to ensure that the menu closes properly based on the user's
 					// next actions.
-					if ( this.element[ 0 ] !== $.ui.safeActiveElement( this.document[ 0 ] ) ) {
+					/*if ( this.element[ 0 ] !== $.ui.safeActiveElement( this.document[ 0 ] ) ) {*/
 						this.element.trigger( "focus" );
-					}
+					//}
 				} );
 			},
 			menufocus: function( event, ui ) {
