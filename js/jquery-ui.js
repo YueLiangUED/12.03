@@ -7393,10 +7393,11 @@ var widgetsMenu = $.widget( "ui.menu", {
 
 			// Prevent focus from sticking to links inside menu after clicking
 			// them (focus should always stay on UL during navigation).
-			"touchend .ui-menu-item": function( event ) {
+			"mousedown .ui-menu-item": function( event ) {
 				event.preventDefault();
 			},
 			"click .ui-menu-item": function( event ) {
+				$('#ui-id-1').hide();
 				var target = $( event.target );
 				var active = $( $.ui.safeActiveElement( this.document[ 0 ] ) );
 				if ( !this.mouseHandled && target.not( ".ui-state-disabled" ).length ) {
@@ -8195,7 +8196,7 @@ $.widget( "ui.autocomplete", {
 
 		this._addClass( this.menu.element, "ui-autocomplete", "ui-front" );
 		this._on( this.menu.element, {
-			touchend: function( event ) {
+			mousedown: function( event ) {
 
 				// prevent moving focus out of the text field
 				event.preventDefault();
@@ -8469,7 +8470,7 @@ $.widget( "ui.autocomplete", {
 	_close: function( event ) {
 
 		// Remove the handler that closes the menu on outside clicks
-		this._off( this.document, "touchend" );
+		this._off( this.document, "mousedown" );
 
 		if ( this.menu.element.is( ":visible" ) ) {
 			this.menu.element.hide();
@@ -8527,7 +8528,7 @@ $.widget( "ui.autocomplete", {
 
 		// Listen for interactions outside of the widget (#6642)
 		this._on( this.document, {
-			touchend: "_closeOnClickOutside"
+			mousedown: "_closeOnClickOutside"
 		} );
 	},
 
@@ -11651,7 +11652,7 @@ $.fn.datepicker = function( options ) {
 
 	/* Initialise the date picker. */
 	if ( !$.datepicker.initialized ) {
-		$( document ).on( "touchend", $.datepicker._checkExternalClick );
+		$( document ).on( "mousedown", $.datepicker._checkExternalClick );
 		$.datepicker.initialized = true;
 	}
 
@@ -12048,7 +12049,7 @@ $.widget( "ui.dialog", {
 					event.preventDefault();
 				}
 			},
-			touchend: function( event ) {
+			mousedown: function( event ) {
 				if ( this._moveToTop( event ) ) {
 					this._focusTabbable();
 				}
@@ -12072,7 +12073,7 @@ $.widget( "ui.dialog", {
 		this._addClass( this.uiDialogTitlebar,
 			"ui-dialog-titlebar", "ui-widget-header ui-helper-clearfix" );
 		this._on( this.uiDialogTitlebar, {
-			touchend: function( event ) {
+			mousedown: function( event ) {
 
 				// Don't prevent click on close button (#8838)
 				// Focusing a dialog that is partially scrolled out of view
@@ -12546,7 +12547,7 @@ $.widget( "ui.dialog", {
 
 		this._addClass( this.overlay, null, "ui-widget-overlay ui-front" );
 		this._on( this.overlay, {
-			touchend: "_keepFocus"
+			mousedown: "_keepFocus"
 		} );
 		this.document.data( "ui-dialog-overlays",
 			( this.document.data( "ui-dialog-overlays" ) || 0 ) + 1 );
@@ -13163,7 +13164,7 @@ var widgetsSelectmenu = $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	},
 
 	_documentClick: {
-		touchend: function( event ) {
+		mousedown: function( event ) {
 			if ( !this.isOpen ) {
 				return;
 			}
@@ -13178,7 +13179,7 @@ var widgetsSelectmenu = $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	_buttonEvents: {
 
 		// Prevent text selection from being reset when interacting with the selectmenu (#10144)
-		touchend: function() {
+		mousedown: function() {
 			var selection;
 
 			if ( window.getSelection ) {
@@ -14306,7 +14307,7 @@ $.widget( "ui.spinner", {
 			}, 100 );
 			event.preventDefault();
 		},
-		"touchend .ui-spinner-button": function( event ) {
+		"mousedown .ui-spinner-button": function( event ) {
 			var previous;
 
 			// We never want the buttons to have focus; whenever the user is
