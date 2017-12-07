@@ -6,11 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="css/reset.min.css">
-    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .ui-autocomplete{
+            padding: .2em .4em;
+            margin: .8em 0 .2em;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+    </style>
     <script src="js/jquery-1.10.1.min.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/pinyin.js"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 <body>
 <section class="wrap">
@@ -42,25 +49,10 @@
     <section class="searchBox">
         <p>请输入小区名称或地址</p>
         <div>
-            <select size="5" style="width: 6.83rem;" class="js-example-basic-multiple" name="states[]">
-                <option value="" selected></option>
-                <option value="shunantong">顺安通</option>
-                <option value="beijiejiayuan">北街家园</option>
-                <option value="dianzijidi">电子基地</option>
-                <option value="longhutaixiaoqu">龙虎台小区</option>
-                <option value="changyiyuanxiaoqu">昌艺园小区</option>
-                <option value="xinglongxiaoqu">兴隆小区</option>
-                <option value="fengjinggaoyuan">丰景高苑</option>
-            </select>
-            <!--<input id="searchBox" type="text">-->
+            <form action="">
+                <input id="search" value="" type="text">
+            </form>
             <a id="searchBtn" href="javascript:void(0)">搜索</a>
-            <!--<ul id="resultList">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>-->
         </div>
     </section>
     <section class="searchResult">
@@ -106,11 +98,34 @@
 </div>
 </body>
 </html>
-<script src="js/index.js"></script>
 <script>
-    $(function () {
-        $(document).ready(function() {
-            $('.js-example-basic-multiple').select2();
+    $.widget( "custom.catcomplete", $.ui.autocomplete, {
+        _renderMenu: function( ul, items ) {
+            var that = this,
+                    currentCategory = "";
+            $.each( items, function( index, item ) {
+                if ( item.category != currentCategory ) {
+                    ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+                    currentCategory = item.category;
+                }
+                that._renderItemData( ul, item );
+            });
+        }
+    });
+</script>
+<script>
+    $(function() {
+        var data = [
+            { kk: '顺安通',label:'顺安通shunantong',category:''},{ kk: '北街家园',label:'北街家园beijiejiayuan',category:''},{ kk: '电子基地',label:'电子基地dianzijidi',category:''},{ kk: '龙虎台小区',label:'龙虎台小区longhutaixiaoqu',category:''},{ kk: '昌艺园小区',label:'昌艺园小区changyiyuanxiaoqu',category:''},{ kk: '兴隆小区',label:'兴隆小区xinglongxiaoqu',category:''},{ kk: '丰景高苑',label:'丰景高苑fengjinggaoyuan',category:''},{ kk: '白各庄新村',label:'白各庄新村baigezhuangxincun',category:''},{ kk: '伊舍小镇',label:'伊舍小镇yishexiaozhen',category:''},{ kk: '翠明新城',label:'翠明新城cuimingxincheng',category:''},{ kk: '盛今佳园',label:'盛今佳园shengjinjiayuan',category:''},{ kk: '新华街一里小区',label:'新华街一里小区xinhuajieyilixiaoqu',category:''},{ kk: '新华街二里小区',label:'新华街二里小区xinhuajieerlixiaoqu',category:''},{ kk: '新华街三里小区',label:'新华街三里小区xinhuajiesanlixiaoqu',category:''},{ kk: '新华街四里小区',label:'新华街四里小区xinhuajiesilixiaoqu',category:''},{ kk: '新华街六里小区',label:'新华街六里小区xinhuajieliulixiaoqu',category:''},{ kk: '新华街七里小区',label:'新华街七里小区xinhuajieqilixiaoqu',category:''},{ kk: '新华街八里小区',label:'新华街八里小区xinhuajiebalixiaoqu',category:''},{ kk: '融泽府',label:'融泽府rongzefu',category:''},{ kk: '总后保障局',label:'总后保障局zonghoubaozhangju',category:''},{ kk: '石景山区石门路258号院',label:'石景山区石门路258号院shijingshanqushimenlu258haoyuan',category:''},{ kk: '博雅德园',label:'博雅德园boyadeyuan',category:''},{ kk: '领袖硅谷A区',label:'领袖硅谷A区lingxiuguiguAqu',category:''},{ kk: '杨庄北区',label:'杨庄北区yangzhuangbeiqu',category:''},{ kk: '观澳园',label:'观澳园guanaoyuan',category:''},{ kk: '碧桐园',label:'碧桐园bitongyuan',category:''},{ kk: '春晖园小区',label:'春晖园小区chunhuiyuanxiaoqu',category:''},{ kk: '冬晴园小区',label:'冬晴园小区dongqingyuanxiaoqu',category:''},{ kk: '秋露园小区',label:'秋露园小区qiuluyuanxiaoqu',category:''},{ kk: '夏霖园',label:'夏霖园xialinyuan',category:''},{ kk: '龙湖双珑源著',label:'龙湖双珑源著longhushuanglongyuanzhu',category:''},{ kk: '社会化合作007',label:'社会化合作007shehuihuahezuo007',category:''},{ kk: '朝阳无限芳菁苑小区',label:'朝阳无限芳菁苑小区chaoyangwuxianfangjingyuanxiaoqu',category:''},{ kk: '亮马桥56号院小区',label:'亮马桥56号院小区liangmaqiao56haoyuanxiaoqu',category:''},{ kk: '公园大道',label:'公园大道gongyuandadao',category:''},{ kk: '北纬40度',label:'北纬40度beiwei40du',category:''},{ kk: '北窑地小区',label:'北窑地小区beiyaodixiaoqu',category:''},{ kk: '北京中医药大学',label:'北京中医药大学beijingzhongyiyaodaxue',category:''},{ kk: '首开畅心园',label:'首开畅心园shoukaichangxinyuan',category:''},{ kk: '朝阳双桥五号井小区',label:'朝阳双桥五号井小区chaoyangshuangqiaowuhaojingxiaoqu',category:''},{ kk: '核工业五所小区',label:'核工业五所小区hegongyewusuoxiaoqu',category:''},{ kk: '卡尔生活馆',label:'卡尔生活馆kaershenghuoguan',category:''},{ kk: '大泥河村小区',label:'大泥河村小区danihecunxiaoqu',category:''},{ kk: '西马道',label:'西马道ximadao',category:''},{ kk: '青春路一院',label:'青春路一院qingchunluyiyuan',category:''},{ kk: '矿机路小区',label:'矿机路小区kuangjiluxiaoqu',category:''},{ kk: '洪福家园小区',label:'洪福家园小区hongfujiayuanxiaoqu',category:''},{ kk: '山水家园小区',label:'山水家园小区shanshuijiayuanxiaoqu',category:''},{ kk: '营城子小区',label:'营城子小区yingchengzixiaoqu',category:''},{ kk: '马坊回迁楼小区',label:'马坊回迁楼小区mafanghuiqianlouxiaoqu',category:''},{ kk: '尚书苑小区',label:'尚书苑小区shangshuyuanxiaoqu',category:''},{ kk: '果园新西里小区',label:'果园新西里小区guoyuanxinxilixiaoqu',category:''},{ kk: '上营东区小区',label:'上营东区小区shangyingdongquxiaoqu',category:''},{ kk: '马各庄回迁楼',label:'马各庄回迁楼magezhuanghuiqianlou',category:''},{ kk: '密西花园三期小区',label:'密西花园三期小区mixihuayuansanqixiaoqu',category:''},{ kk: '金台园',label:'金台园jintaiyuan',category:''},{ kk: '果园新里南区',label:'果园新里南区guoyuanxinlinanqu',category:''},{ kk: '星河苑小区',label:'星河苑小区xingheyuanxiaoqu',category:''},{ kk: '迎宾北路',label:'迎宾北路yingbinbeilu',category:''},{ kk: '世纪家园',label:'世纪家园shijijiayuan',category:''},{ kk: '行宫南区小区',label:'行宫南区小区xinggongnanquxiaoqu',category:''},{ kk: '兴怀大街',label:'兴怀大街xinghuaidajie',category:''},{ kk: '青春路',label:'青春路qingchunlu',category:''},{ kk: '原香小镇小区',label:'原香小镇小区yuanxiangxiaozhenxiaoqu',category:''},{ kk: '富乐小区北里',label:'富乐小区北里fulexiaoqubeili',category:''},{ kk: '永安小区',label:'永安小区yonganxiaoqu',category:''},{ kk: '中卫世纪城小区',label:'中卫世纪城小区zhongweishijichengxiaoqu',category:''},{ kk: '金海小区',label:'金海小区jinhaixiaoqu',category:''},{ kk: '泰安小区',label:'泰安小区taianxiaoqu',category:''},{ kk: '康安小区',label:'康安小区kanganxiaoqu',category:''},{ kk: '温泉东里',label:'温泉东里wenquandongli',category:''},{ kk: '温泉西里',label:'温泉西里wenquanxili',category:''},{ kk: '格兰山水小区',label:'格兰山水小区gelanshanshuixiaoqu',category:''},{ kk: '礼贤街北小区',label:'礼贤街北小区lixianjiebeixiaoqu',category:''},{ kk: '云龙阁小区',label:'云龙阁小区yunlonggexiaoqu',category:''},{ kk: '迎宾花园小区',label:'迎宾花园小区yingbinhuayuanxiaoqu',category:''},{ kk: '平谷啤酒厂居民楼小区',label:'平谷啤酒厂居民楼小区pinggupijiuchangjuminlouxiaoqu',category:''},{ kk: '夏各庄东区',label:'夏各庄东区xiagezhuangdongqu',category:''},{ kk: '航宇北街小区',label:'航宇北街小区hangyubeijiexiaoqu',category:''},{ kk: '93427小区',label:'93427小区93427xiaoqu',category:''},{ kk: '夏各庄西区',label:'夏各庄西区xiagezhuangxiqu',category:''},{ kk: '海关北街小区',label:'海关北街小区haiguanbeijiexiaoqu',category:''},{ kk: '紫贵庄园',label:'紫贵庄园ziguizhuangyuan',category:''},{ kk: '湖光小区',label:'湖光小区huguangxiaoqu',category:''},{ kk: '南华园四区小区',label:'南华园四区小区nanhuayuansiquxiaoqu',category:''},{ kk: '海研所',label:'海研所haiyansuo',category:''},{ kk: '观山汇景小区',label:'观山汇景小区guanshanhuijingxiaoqu',category:''},{ kk: '金果林家园',label:'金果林家园jinguolinjiayuan',category:''},{ kk: '京杭广场住宅楼',label:'京杭广场住宅楼jinghangguangchangzhuzhailou',category:''},{ kk: '金晶智慧宿舍楼',label:'金晶智慧宿舍楼jinjingzhihuisushelou',category:''},{ kk: '恒华·安纳湖南区',label:'恒华·安纳湖南区henghuaannahunanqu',category:''},{ kk: '陆航学院',label:'陆航学院luhangxueyuan',category:''},{ kk: '境界家园',label:'境界家园jingjiejiayuan',category:''},{ kk: '米兰天空',label:'米兰天空milantiankong',category:''},{ kk: '珠江四季悦城小区（社会化）',label:'珠江四季悦城小区（社会化）zhujiangsijiyuechengxiaoqushehuihua',category:''},{ kk: '龙湖香醍溪岸',label:'龙湖香醍溪岸longhuxiangtixian',category:''},{ kk: '龙湖香醍溪岸北区',label:'龙湖香醍溪岸北区longhuxiangtixianbeiqu',category:''},{ kk: '北京市建培文化发展中心',label:'北京市建培文化发展中心beijingshijianpeiwenhuafazhanzhongxin',category:''},{ kk: '广茂公寓',label:'广茂公寓guangmaogongyu',category:''},{ kk: '经开壹中心',label:'经开壹中心jingkaiyizhongxin',category:''},{ kk: '冠捷显示科技宿舍楼',label:'冠捷显示科技宿舍楼guanjiexianshikejisushelou',category:''},{ kk: '桑普科技园',label:'桑普科技园sangpukejiyuan',category:''},{ kk: '裕京花园',label:'裕京花园yujinghuayuan',category:''},{ kk: '武装警察第三支队',label:'武装警察第三支队wuzhuangjingchadisanzhidui',category:''},{ kk: '莱茵河畔',label:'莱茵河畔laiyinhepan',category:''},{ kk: '阿奇夏米尔公司宿舍楼',label:'阿奇夏米尔公司宿舍楼aqixiamiergongsisushelou',category:''},{ kk: '会展誉景',label:'会展誉景huizhanyujing',category:''},{ kk: '恒大天创（社会化合作）',label:'恒大天创（社会化合作）hengdatianchuangshehuihuahezuo',category:''},{ kk: '龙湖香醍漫步一区',label:'龙湖香醍漫步一区longhuxiangtimanbuyiqu',category:''},{ kk: '龙湖香醍漫步',label:'龙湖香醍漫步longhuxiangtimanbu',category:''},{ kk: '首开香溪郡小区',label:'首开香溪郡小区shoukaixiangxijunxiaoqu',category:''},{ kk: '潞苑嘉园',label:'潞苑嘉园luyuanjiayuan',category:''},{ kk: '长城国际',label:'长城国际changchengguoji',category:''},{ kk: '世纪星城',label:'世纪星城shijixingcheng',category:''},{ kk: '34号院红旗小区',label:'34号院红旗小区34haoyuanhongqixiaoqu',category:''},{ kk: '密西花园',label:'密西花园mixihuayuan',category:''},{ kk: '果园新里中区',label:'果园新里中区guoyuanxinlizhongqu',category:''},{ kk: '沿湖小区',label:'沿湖小区yanhuxiaoqu',category:''},{ kk: '大泥河村小区',label:'大泥河村小区danihecunxiaoqu',category:''},{ kk: '果园西路38号院',label:'果园西路38号院guoyuanxilu38haoyuan',category:''},{ kk: '管头村小区（通州区）',label:'管头村小区（通州区）guantoucunxiaoqutongzhouqu',category:''},{ kk: '北门口村小区（通州区）',label:'北门口村小区（通州区）beimenkoucunxiaoqutongzhouqu',category:''},{ kk: '村-李桥村（通顺路以东）',label:'村-李桥村（通顺路以东）cunliqiaocuntongshunluyidong',category:''},{ kk: '连竺小区',label:'连竺小区lianzhuxiaoqu',category:''},{ kk: '马驹桥物流小区（通州区）',label:'马驹桥物流小区（通州区）majuqiaowuliuxiaoqutongzhouqu',category:''},{ kk: '新潮家园',label:'新潮家园xinchaojiayuan',category:''},{ kk: 'WJ六支队',label:'WJ六支队WJliuzhidui',category:''},{ kk: '四方天龙汽车',label:'四方天龙汽车sifangtianlongqiche',category:''},{ kk: '北刘各庄村小区（通州区）',label:'北刘各庄村小区（通州区）beiliugezhuangcunxiaoqutongzhouqu',category:''},{ kk: '玉桥南北里',label:'玉桥南北里yuqiaonanbeili',category:''},{ kk: '周营村周营村小区（通州区）',label:'周营村周营村小区（通州区）zhouyingcunzhouyingcunxiaoqutongzhouqu',category:''},{ kk: '双埠头村小区（通州区）',label:'双埠头村小区（通州区）shuangbutoucunxiaoqutongzhouqu',category:''},{ kk: '三家店小区（顺义区）',label:'三家店小区（顺义区）sanjiadianxiaoqushunyiqu',category:''},{ kk: '营尔村',label:'营尔村yingercun',category:''},{ kk: '胡家垡村小区（通州区）',label:'胡家垡村小区（通州区）hujiafacunxiaoqutongzhouqu',category:''},{ kk: '东海红村小区',label:'东海红村小区donghaihongcunxiaoqu',category:''},{ kk: '武夷花园',label:'武夷花园wuyihuayuan',category:''},{ kk: '荣丰2008',label:'荣丰2008rongfeng2008',category:''},{ kk: '西海洪村小区',label:'西海洪村小区xihaihongcunxiaoqu',category:''},{ kk: '东海红小区',label:'东海红小区donghaihongxiaoqu',category:''},{ kk: '北法信村',label:'北法信村beifaxincun',category:''},{ kk: '杨二营',label:'杨二营yangerying',category:''},{ kk: '吕家营社区',label:'吕家营社区lvjiayingshequ',category:''},{ kk: '铁匠营',label:'铁匠营tiejiangying',category:''},{ kk: '金乡嘉园小区',label:'金乡嘉园小区jinxiangjiayuanxiaoqu',category:''},{ kk: '阳光假日别墅',label:'阳光假日别墅yangguangjiaribieshu',category:''},{ kk: '山立庄小区',label:'山立庄小区shanlizhuangxiaoqu',category:''},{ kk: '陈各庄及雁栖新村',label:'陈各庄及雁栖新村chengezhuangjiyanqixincun',category:''},{ kk: '雁栖大街-金台园周边',label:'雁栖大街-金台园周边yanqidajiejintaiyuanzhoubian',category:''},{ kk: '雁栖大街-下园二条周边',label:'雁栖大街-下园二条周边yanqidajiexiayuanertiaozhoubian',category:''},{ kk: '铸造村小区',label:'铸造村小区zhuzaocunxiaoqu',category:''},{ kk: '大成南里小区',label:'大成南里小区dachengnanlixiaoqu',category:''},{ kk: '原乡美利坚商务楼宇',label:'原乡美利坚商务楼宇yuanxiangmeilijianshangwulouyu',category:''},{ kk: '北园',label:'北园beiyuan',category:''},{ kk: '乐园西小区二期',label:'乐园西小区二期leyuanxixiaoquerqi',category:''},{ kk: '石河营村',label:'石河营村shiheyingcun',category:''},{ kk: '上纸寨村',label:'上纸寨村shangzhizhaicun',category:''},{ kk: '乐园西小区一期',label:'乐园西小区一期leyuanxixiaoquyiqi',category:''},{ kk: '水务局小区及周边',label:'水务局小区及周边shuiwujuxiaoqujizhoubian',category:''},{ kk: '茶坞村',label:'茶坞村chawucun',category:''},{ kk: '腾龙源城',label:'腾龙源城tenglongyuancheng',category:''},{ kk: '友谊路平房区',label:'友谊路平房区youyilupingfangqu',category:''},{ kk: '金顶街28号院',label:'金顶街28号院jindingjie28haoyuan',category:''},{ kk: '宝盛西里',label:'宝盛西里baoshengxili',category:''},{ kk: '柳沟村',label:'柳沟村liugoucun',category:''},{ kk: '道里人家',label:'道里人家daolirenjia',category:''},{ kk: '赵庄村',label:'赵庄村zhaozhuangcun',category:''},{ kk: '雕窝村',label:'雕窝村diaowocun',category:''},{ kk: '孟庄村',label:'孟庄村mengzhuangcun',category:''},{ kk: '西罗园一四区',label:'西罗园一四区xiluoyuanyisiqu',category:''},{ kk: '民安社区',label:'民安社区minanshequ',category:''},{ kk: '沙子口斜街',label:'沙子口斜街shazikouxiejie',category:''},{ kk: '华夏管理学院',label:'华夏管理学院huaxiaguanlixueyuan',category:''},{ kk: '香山村庄',label:'香山村庄xiangshancunzhuang',category:''},{ kk: '东长沟村',label:'东长沟村dongchanggoucun',category:''},{ kk: '龙虎台村',label:'龙虎台村longhutaicun',category:''},{ kk: '韩村河周边',label:'韩村河周边hancunhezhoubian',category:''},{ kk: '下元综合市场',label:'下元综合市场xiayuanzongheshichang',category:''},{ kk: '上中院村',label:'上中院村shangzhongyuancun',category:''},{ kk: '三家店村',label:'三家店村sanjiadiancun',category:''},{ kk: '下中院村',label:'下中院村xiazhongyuancun',category:''},{ kk: '南北良各庄',label:'南北良各庄nanbeilianggezhuang',category:''},{ kk: '南韩继村',label:'南韩继村nanhanjicun',category:''},{ kk: '马坊村',label:'马坊村mafangcun',category:''},{ kk: '京铁家园铁路小区',label:'京铁家园铁路小区jingtiejiayuantieluxiaoqu',category:''},{ kk: '华北市场',label:'华北市场huabeishichang',category:''},{ kk: '怀北铁路小区',label:'怀北铁路小区huaibeitieluxiaoqu',category:''},{ kk: '平谷平翔东园小区',label:'平谷平翔东园小区pinggupingxiangdongyuanxiaoqu',category:''},{ kk: '大堡村',label:'大堡村dabaocun',category:''},{ kk: '三家店东村东坟',label:'三家店东村东坟sanjiadiandongcundongfen',category:''},{ kk: '季庄村（改造）小区',label:'季庄村（改造）小区jizhuangcungaizaoxiaoqu',category:''},{ kk: '中兴印厂小区',label:'中兴印厂小区zhongxingyinchangxiaoqu',category:''},{ kk: '十里堡村',label:'十里堡村shilibaocun',category:''},{ kk: '双营村',label:'双营村shuangyingcun',category:''},{ kk: '南北正村',label:'南北正村nanbeizhengcun',category:''},{ kk: '麻峪村（改造）',label:'麻峪村（改造）mayucungaizao',category:''},{ kk: '红泥沟村',label:'红泥沟村hongnigoucun',category:''},{ kk: '马庄村',label:'马庄村mazhuangcun',category:''},{ kk: '南口镇村',label:'南口镇村nankouzhencun',category:''},{ kk: '二龙岗村',label:'二龙岗村erlonggangcun',category:''},{ kk: '东南章村',label:'东南章村dongnanzhangcun',category:''},{ kk: '孤山口村',label:'孤山口村gushankoucun',category:''},{ kk: '银地家园',label:'银地家园yindijiayuan',category:''},{ kk: '万年花城万芳园',label:'万年花城万芳园wannianhuachengwanfangyuan',category:''},{ kk: '二七通信厂',label:'二七通信厂erqitongxinchang',category:''},{ kk: '信和嘉园',label:'信和嘉园xinhejiayuan',category:''},{ kk: '广积屯小区',label:'广积屯小区guangjitunxiaoqu',category:''},{ kk: '古城村',label:'古城村guchengcun',category:''},{ kk: '马泉营村',label:'马泉营村maquanyingcun',category:''},{ kk: '志新北里',label:'志新北里zhixinbeili',category:''},{ kk: '八家村',label:'八家村bajiacun',category:''},{ kk: '梁家园村',label:'梁家园村liangjiayuancun',category:''},{ kk: '沙窝村二期',label:'沙窝村二期shawocunerqi',category:''},{ kk: '朝阳小店村',label:'朝阳小店村chaoyangxiaodiancun',category:''},{ kk: '陈各庄村(大兴区）',label:'陈各庄村(大兴区）chengezhuangcundaxingqu',category:''},{ kk: '三顺庄村(大兴区）',label:'三顺庄村(大兴区）sanshunzhuangcundaxingqu',category:''},{ kk: '魏善庄村(大兴区）',label:'魏善庄村(大兴区）weishanzhuangcundaxingqu',category:''},{ kk: '东窑村一期',label:'东窑村一期dongyaocunyiqi',category:''},{ kk: '东窑村二期',label:'东窑村二期dongyaocunerqi',category:''},{ kk: '王各庄村(大兴区）',label:'王各庄村(大兴区）wanggezhuangcundaxingqu',category:''},{ kk: '南皋路-黑桥村三期',label:'南皋路-黑桥村三期nangaoluheiqiaocunsanqi',category:''},{ kk: '南皋路-黑桥村二期',label:'南皋路-黑桥村二期nangaoluheiqiaocunerqi',category:''},{ kk: '西枣林村(大兴区）',label:'西枣林村(大兴区）xizaolincundaxingqu',category:''},{ kk: '西沙窝村(大兴区）',label:'西沙窝村(大兴区）xishawocundaxingqu',category:''},{ kk: '赵庄子村(大兴区）',label:'赵庄子村(大兴区）zhaozhuangzicundaxingqu',category:''},{ kk: '河南辛庄(大兴区）',label:'河南辛庄(大兴区）henanxinzhuangdaxingqu',category:''},{ kk: '司家营村',label:'司家营村sijiayingcun',category:''},{ kk: '皮村小区',label:'皮村小区picunxiaoqu',category:''},{ kk: '岳家务村(大兴区）',label:'岳家务村(大兴区）yuejiawucundaxingqu',category:''},{ kk: '刘各庄村(大兴区）',label:'刘各庄村(大兴区）liugezhuangcundaxingqu',category:''},{ kk: '东沙各庄村东',label:'东沙各庄村东dongshagezhuangcundong',category:''},{ kk: '荆栗园村',label:'荆栗园村jingliyuancun',category:''},{ kk: '达峪沟村（WBS小区）',label:'达峪沟村（WBS小区）dayugoucunWBSxiaoqu',category:''},{ kk: '白庙村',label:'白庙村baimiaocun',category:''},{ kk: '营房村-社会化合作YFC',label:'营房村-社会化合作YFCyingfangcunshehuihuahezuoYFC',category:''},{ kk: '新王庄村',label:'新王庄村xinwangzhuangcun',category:''},{ kk: '八仙庄村',label:'八仙庄村baxianzhuangcun',category:''},{ kk: '金叵罗村',label:'金叵罗村jinzuoluocun',category:''},{ kk: '上峪村',label:'上峪村shangyucun',category:''},{ kk: '福田宿舍楼',label:'福田宿舍楼futiansushelou',category:''},
+        ];
+
+
+
+        $( "#search" ).catcomplete({
+            delay: 0,
+            source: data,
+            matchContains: "word"
         });
     });
 </script>
+<script src="js/index.js"></script>
