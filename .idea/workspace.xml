@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ed8d09b-f93c-4345-aed2-d97dfe859ce8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-ui.js" afterPath="$PROJECT_DIR$/js/jquery-ui.js" />
     </list>
@@ -24,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="545">
@@ -37,16 +38,16 @@
       <file leaf-file-name="jquery-ui.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="7414" column="0" selection-start-line="7414" selection-start-column="0" selection-end-line="7414" selection-end-column="0" />
+            <state relative-caret-position="11078">
+              <caret line="15111" column="27" selection-start-line="15111" selection-start-column="18" selection-end-line="15111" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1512638123000" expanded="true" signature="22659:22730" placeholder="..." />
-                <marker date="1512638123000" expanded="true" signature="22753:22777" placeholder="..." />
-                <marker date="1512638123000" expanded="true" signature="105400:105417" placeholder="..." />
-                <marker date="1512638123000" expanded="true" signature="120032:120048" placeholder="..." />
-                <marker date="1512638123000" expanded="true" signature="277550:277594" placeholder="..." />
-                <marker date="1512638123000" expanded="true" signature="327123:327472" placeholder="..." />
+                <marker date="1512639839000" expanded="true" signature="22659:22730" placeholder="..." />
+                <marker date="1512639839000" expanded="true" signature="22753:22777" placeholder="..." />
+                <marker date="1512639839000" expanded="true" signature="105400:105417" placeholder="..." />
+                <marker date="1512639839000" expanded="true" signature="120032:120048" placeholder="..." />
+                <marker date="1512639839000" expanded="true" signature="277546:277590" placeholder="..." />
+                <marker date="1512639839000" expanded="true" signature="327119:327468" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -62,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            <state relative-caret-position="443">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -97,8 +98,8 @@
         <option value="$USER_HOME$/Downloads/data(2).txt" />
         <option value="$USER_HOME$/Downloads/data(3).txt" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/jquery-ui.js" />
         <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/js/jquery-ui.js" />
       </list>
     </option>
   </component>
@@ -288,12 +289,12 @@
       <workItem from="1512477789516" duration="12871000" />
       <workItem from="1512538518919" duration="155000" />
       <workItem from="1512619247165" duration="2747000" />
-      <workItem from="1512635505762" duration="2453000" />
+      <workItem from="1512635505762" duration="3532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39853000" />
+    <option name="totallyTimeSpent" value="40932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1237" height="777" extended-state="6" />
@@ -330,7 +331,69 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>7395</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>8197</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>8471</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>8529</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>11653</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>12050</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>12548</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>13165</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>13180</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/jquery-ui.js</url>
+          <line>14308</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -642,34 +705,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state relative-caret-position="443">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="7414" column="0" selection-start-line="7414" selection-start-column="0" selection-end-line="7414" selection-end-column="0" />
+        <state relative-caret-position="11078">
+          <caret line="15111" column="27" selection-start-line="15111" selection-start-column="18" selection-end-line="15111" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1512638123000" expanded="true" signature="22659:22730" placeholder="..." />
-            <marker date="1512638123000" expanded="true" signature="22753:22777" placeholder="..." />
-            <marker date="1512638123000" expanded="true" signature="105400:105417" placeholder="..." />
-            <marker date="1512638123000" expanded="true" signature="120032:120048" placeholder="..." />
-            <marker date="1512638123000" expanded="true" signature="277550:277594" placeholder="..." />
-            <marker date="1512638123000" expanded="true" signature="327123:327472" placeholder="..." />
+            <marker date="1512639839000" expanded="true" signature="22659:22730" placeholder="..." />
+            <marker date="1512639839000" expanded="true" signature="22753:22777" placeholder="..." />
+            <marker date="1512639839000" expanded="true" signature="105400:105417" placeholder="..." />
+            <marker date="1512639839000" expanded="true" signature="120032:120048" placeholder="..." />
+            <marker date="1512639839000" expanded="true" signature="277546:277590" placeholder="..." />
+            <marker date="1512639839000" expanded="true" signature="327119:327468" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        <state relative-caret-position="545">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding />
         </state>
       </provider>

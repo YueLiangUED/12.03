@@ -28,7 +28,6 @@ $(function () {
         $('#floorNumList').slideUp();
         $('#search').attr('value',$(this).children().text());
         $('#search').val($(this).children().text());
-        $('#ui-id-1').hide();
         //console.log(1);
     });
     //搜索按钮
