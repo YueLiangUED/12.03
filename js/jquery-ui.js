@@ -8195,7 +8195,7 @@ $.widget( "ui.autocomplete", {
 			.menu( "instance" );
 
 		this._addClass( this.menu.element, "ui-autocomplete", "ui-front" );
-		this._on( this.menu.element, {
+		this._on( /*this.menu.element,*/ {
 			mousedown: function( event ) {
 
 				// prevent moving focus out of the text field
