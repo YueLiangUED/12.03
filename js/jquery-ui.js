@@ -8212,9 +8212,9 @@ $.widget( "ui.autocomplete", {
 					// and ignored the blur event because of the cancelBlur flag set above. So
 					// we restore focus to ensure that the menu closes properly based on the user's
 					// next actions.
-					/*if ( this.element[ 0 ] !== $.ui.safeActiveElement( this.document[ 0 ] ) ) {*/
+					if ( this.element[ 0 ] !== $.ui.safeActiveElement( this.document[ 0 ] ) ) {
 						this.element.trigger( "focus" );
-					//}
+					}
 				} );
 			},
 			menufocus: function( event, ui ) {
@@ -8236,13 +8236,13 @@ $.widget( "ui.autocomplete", {
 				}
 
 				item = ui.item.data( "ui-autocomplete-item" );
-				if ( false !== this._trigger( "focus", event, { item: item } ) ) {
+				//if ( false !== this._trigger( "focus", event, { item: item } ) ) {
 
 					// use value to match what will end up in the input, if it was a key event
 					if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
 						this._value( item.kk );
 					}
-				}
+				//}
 
 				// Announce the value in the liveRegion
 				label = ui.item.attr( "aria-label" ) || item.value;
