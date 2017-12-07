@@ -29,6 +29,7 @@ $(function () {
         $('#search').attr('value',$(this).children().text());
         $('#search').val($(this).children().text());
         $(this).parent().hide();
+        //console.log(1);
     });
     //搜索按钮
     $('#searchBtn').on('click',function () {
