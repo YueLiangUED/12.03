@@ -27,6 +27,8 @@ $(function () {
         $('#communityList').slideDown();
         $('#floorNumList').slideUp();
         $('#search').attr('value',$(this).children().text());
+        $('#search').val($(this).children().text());
+        $(this).parent().hide();
     });
     //搜索按钮
     $('#searchBtn').on('click',function () {

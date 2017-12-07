@@ -8396,7 +8396,7 @@ $.widget( "ui.autocomplete", {
 				menuVisible = this.menu.element.is( ":visible" ),
 				modifierKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
-			if ( !equalValues || ( equalValues && /*!menuVisible &&*/ !modifierKey ) ) {
+			if ( !equalValues || ( equalValues && !menuVisible && !modifierKey ) ) {
 				this.selectedItem = null;
 				this.search( null, event );
 			}
@@ -13001,7 +13001,7 @@ var widgetsSelectmenu = $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 
 		// If this is the first time the menu is being opened, render the items
 		if ( !this._rendered ) {
-			this._refreshMenu();
+			//this._refreshMenu();
 		} else {
 
 			// Menu clears focus on close, reset focus to selected item
