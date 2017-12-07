@@ -8396,7 +8396,7 @@ $.widget( "ui.autocomplete", {
 				menuVisible = this.menu.element.is( ":visible" ),
 				modifierKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
-			if ( !equalValues || ( equalValues && !menuVisible && !modifierKey ) ) {
+			if ( !equalValues || ( equalValues && /*!menuVisible &&*/ !modifierKey ) ) {
 				this.selectedItem = null;
 				this.search( null, event );
 			}
@@ -8454,7 +8454,6 @@ $.widget( "ui.autocomplete", {
 		if ( !this.options.disabled && content && content.length && !this.cancelSearch ) {
 			this._suggest( content );
 			this._trigger( "open" );
-
 		} else {
 
 			// use ._close() instead of .close() so we don't cancel future searches
